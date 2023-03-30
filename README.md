@@ -5,9 +5,9 @@ BaseGrid Framework es un sistema de grilla responsive basado en 12 columnas, dis
 - Basado en 12 columnas
 - Clases predefinidas para diseños de una o varias columnas
 - Opciones para offsets, push y pull para ajustar la posición de las columnas
-- Media queries para dispositivos móviles y tablets
 - Escrito en SASS
 - Personalizable para adaptarse a los requisitos específicos del proyecto
+- Desarrollado usando IA
 - Licencia Creative Commons 3.0
 
 ## Uso básico
@@ -39,20 +39,8 @@ También puedes utilizar opciones como offsets, push y pull para ajustar la posi
 </div>
 ```
 
-## Media Queries
-El framework cuenta con media queries para dispositivos móviles y tablets, que permiten que los diseños sean adaptables a diferentes tamaños de pantalla.
-
-### Small Screens (≤ 576px)
-En dispositivos con pantallas pequeñas, las columnas se apilan verticalmente y tienen un ancho de 100%.
-
-### Medium Screens (> 576px)
-En dispositivos con pantallas medianas, las columnas se ajustan a un ancho de 50% y se colocan lado a lado.
-
-### Large Screens (> 992px)
-En dispositivos con pantallas grandes, las columnas se ajustan a un ancho de 33.33% y se colocan lado a lado.
-
 ## Personalización
-El framework está escrito en CSS y se puede personalizar fácilmente para adaptarse a los requisitos específicos del proyecto. Simplemente modifica los estilos CSS en el archivo basegrid.css según sea necesario.
+El framework está escrito en SASS y se puede personalizar fácilmente para adaptarse a los requisitos específicos del proyecto. Simplemente modifica el código fuente en el archivo sass/basegrid.scss o los estilos CSS en el archivo dist/basegrid.css según sea necesario.
 
 ## Contribuir
 Si quieres contribuir al desarrollo del framework, ¡tus contribuciones son bienvenidas! El código fuente del proyecto se encuentra en GitHub: https://github.com/shadax-dev/basegrid/
