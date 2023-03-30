@@ -11,7 +11,7 @@ BaseGrid Framework es un sistema de grilla responsive basado en 12 columnas, dis
 - Licencia Creative Commons 3.0
 
 ## Uso básico
-Para utilizar el framework, simplemente incluye el archivo basegrid.css en tu documento HTML:
+Para utilizar el framework, simplemente incluye el archivo basegrid.css que encontratás en el directorio dist en tu documento HTML:
 
 ```bash
 <link rel="stylesheet" href="basegrid.css">
