@@ -10,10 +10,9 @@ $container-max-width: 1200px;
 
 /* Mixin para generar el estilo de las columnas */
 @mixin make-columns($col-start, $col-end) {
-  float: left;
-  width: calc-column-width($col-end - $col-start + 1);
-  margin-left: calc-column-width($col-start - 1) + $gutter;
-  
+  flex: 1 0 calc-column-width($col-end - $col-start + 1);
+  margin-left: $gutter;
+
   &:first-child {
     margin-left: 0;
   }
@@ -36,16 +35,14 @@ $container-max-width: 1200px;
 /* Generar las clases de los push */
 @for $i from 1 through $columns {
   .push-#{$i} {
-    position: relative;
-    left: calc-column-width($i);
+    margin-left: calc-column-width($i);
   }
 }
 
 /* Generar las clases de los pull */
 @for $i from 1 through $columns {
   .pull-#{$i} {
-    position: relative;
-    right: calc-column-width($i);
+    margin-left: -calc-column-width($i);
   }
 }
 
@@ -53,17 +50,23 @@ $container-max-width: 1200px;
 .container {
   max-width: $container-max-width;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   padding: 0 calc($gutter / 2);
 }
 
 /* Estilo para las filas */
 .row {
-  margin-left: - calc($gutter / 2);
-  margin-right: - calc($gutter / 2);
-  
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: - $gutter;
+  margin-right: - $gutter;
+
   .col {
-    padding-left: calc($gutter / 2);
-    padding-right: calc($gutter / 2);
+    flex: 1 0 auto;
+    padding-left: $gutter;
+    padding-right: $gutter;
   }
 }
 
