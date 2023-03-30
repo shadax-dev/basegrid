@@ -45,5 +45,5 @@ El framework está escrito en SASS y se puede personalizar fácilmente para adap
 ## Contribuir
 Si quieres contribuir al desarrollo del framework, ¡tus contribuciones son bienvenidas! El código fuente del proyecto se encuentra en GitHub: https://github.com/shadax-dev/basegrid/
 
-Licencia
+## Licencia
 Este proyecto está licenciado bajo la Licencia Creative Commons 3.0. Consulta el archivo LICENSE para más detalles.
