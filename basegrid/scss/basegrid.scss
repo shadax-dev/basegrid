@@ -1,0 +1,75 @@
+/* Definir variables */
+$columns: 12;
+$gutter: 30px;
+$container-max-width: 1200px;
+
+/* Función para calcular el ancho de las columnas */
+@function calc-column-width($col) {
+  @return calc($col / $columns);
+}
+
+/* Mixin para generar el estilo de las columnas */
+@mixin make-columns($col-start, $col-end) {
+  float: left;
+  width: calc-column-width($col-end - $col-start + 1);
+  margin-left: calc-column-width($col-start - 1) + $gutter;
+  
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+/* Generar las clases de las columnas */
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    @include make-columns($i, $i);
+  }
+}
+
+/* Generar las clases de los offsets */
+@for $i from 1 through $columns {
+  .offset-#{$i} {
+    margin-left: calc-column-width($i);
+  }
+}
+
+/* Generar las clases de los push */
+@for $i from 1 through $columns {
+  .push-#{$i} {
+    position: relative;
+    left: calc-column-width($i);
+  }
+}
+
+/* Generar las clases de los pull */
+@for $i from 1 through $columns {
+  .pull-#{$i} {
+    position: relative;
+    right: calc-column-width($i);
+  }
+}
+
+/* Estilo para el contenedor */
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 calc($gutter / 2);
+}
+
+/* Estilo para las filas */
+.row {
+  margin-left: - calc($gutter / 2);
+  margin-right: - calc($gutter / 2);
+  
+  .col {
+    padding-left: calc($gutter / 2);
+    padding-right: calc($gutter / 2);
+  }
+}
+
+/* Clearfix para evitar problemas de float */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
